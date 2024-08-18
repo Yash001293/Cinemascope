@@ -1,0 +1,93 @@
+@import "../../../../mixins.scss";
+.videosSection {
+  position: relative;
+  margin-bottom: 50px;
+  // navigation arrow start
+  .arrow {
+    font-size: 3rem;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+    @include md {
+      display: block;
+    }
+    @include lg {
+      top: 50%;
+    }
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .leftarrow {
+    left: 2rem;
+  }
+  .rightarrow {
+    right: 2rem;
+  }
+  // navigation arrow end
+  .sectionHeading {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 25px;
+  }
+  .videos {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+    @include md {
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .videoItem {
+      width: 150px;
+      flex-shrink: 0;
+      @include md {
+        width: 25%;
+      }
+      cursor: pointer;
+      .videoThumbnail {
+        margin-bottom: 15px;
+        position: relative;
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 12px;
+          transition: all 0.7s ease-in-out;
+        }
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.5;
+          }
+        }
+      }
+      .videoTitle {
+        color: white;
+        font-size: 14px;
+        line-height: 20px;
+        @include md {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

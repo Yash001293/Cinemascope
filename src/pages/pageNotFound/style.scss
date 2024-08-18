@@ -1,0 +1,33 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .pagenotfound {
+    text-align: center;
+    img {
+      width: 50%;
+      padding-top: 7rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .gotohomebtn {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.87);
+    padding: 8px 23px;
+    border-radius: 100vw;
+    color: rgb(0, 0, 0);
+  }
+  .notfoundpageinfo {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+    p {
+      padding-top: 1rem;
+    }
+  }
+}

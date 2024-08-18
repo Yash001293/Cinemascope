@@ -1,0 +1,149 @@
+@import "../../../../mixins.scss";
+
+.DetailsBanner {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  //   position: relative;
+  .details {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .posterimg {
+      .lazy-load-image-background {
+        position: relative;
+        width: 100%;
+        height: 95vh;
+        img {
+          opacity: 0.2;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include md {
+      flex-direction: row;
+      gap: 4rem;
+      position: absolute;
+      top: 7rem;
+    }
+    .left-section {
+      flex-shrink: 0;
+      .lazy-load-image-background {
+        box-shadow: rgba(255, 0, 0, 0.288) 0px 22px 70px 4px;
+        width: 30rem;
+        height: 40rem;
+        position: absolute; //1
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include md {
+          width: 30rem;
+          height: 40rem;
+          position: relative;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 1rem;
+          box-shadow: 2rem 2rem 2 red;
+        }
+      }
+    }
+    .right-section {
+      margin-bottom: 7rem;
+      @include md {
+        margin-bottom: 0;
+      }
+      .title {
+        font-size: 2.8rem;
+        line-height: 4rem;
+        @include md {
+          font-size: 3.5rem;
+          line-height: 4.5rem;
+        }
+      }
+      .tagline {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.5;
+        @include md {
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
+      }
+      .genres {
+        margin-bottom: 2.5rem;
+        flex-flow: row wrap;
+      }
+      .section-1 {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        margin: 2.5rem 0;
+        .rating {
+          font-size: 1.4rem;
+        }
+        .playbtn {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          svg {
+            width: 60px;
+            height: 30px;
+            @include md {
+              width: 80px;
+              height: 40px;
+            }
+          }
+          .text {
+            font-size: 1.4rem;
+            transition: all 0.7s ease-in-out;
+          }
+        }
+      }
+      .section-2 {
+        .heading {
+          font-size: 2.4rem;
+          margin-bottom: 10px;
+        }
+        .description {
+          line-height: 24px;
+          font-size: 1.2rem;
+          @include md {
+            padding-right: 100px;
+          }
+        }
+      }
+      .section-3 {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 15px 0;
+        display: flex;
+        .information {
+          margin-right: 10px;
+          display: flex;
+          flex-flow: row wrap;
+          font-size: 1.2rem;
+        }
+        .textinfo {
+          margin-right: 10px;
+          opacity: 0.7;
+          line-height: 24px;
+          &.bold {
+            font-weight: 600;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import "../../../mixins.scss";
+
+.carouselSection {
+  margin-bottom: 5rem;
+  position: relative;
+  .contentWrapper {
+    position: relative;
+  }
+  .carouselTitle {
+    font-size: 2.4rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
+    font-weight: normal;
+  }
+  .arrow {
+    font-size: 3rem;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+    @include md {
+      display: block;
+    }
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .leftarrow {
+    left: 3rem;
+  }
+  .rightarrow {
+    right: 3rem;
+  }
+  .carouselitems {
+    display: flex;
+    gap: 1rem;
+    overflow-y: hidden;
+    margin-right: -2rem;
+    margin-left: -2rem;
+    padding: 0 2rem;
+    @include md {
+      gap: 2rem;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .carouselitem {
+      width: 12.5rem;
+      height: 30rem;
+      @include md {
+        height: 40rem;
+      }
+      cursor: pointer;
+      @include md {
+        width: calc(25% - 1.5rem);
+      }
+      @include lg {
+        width: calc(20% - 1.6rem);
+      }
+      flex-shrink: 0;
+      .poster {
+        position: relative;
+        width: 100%;
+        height: 65%;
+        aspect-ratio: 1 / 1.5;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 1rem;
+        @include md {
+          height: 80%;
+        }
+        .lazy-load-image-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 1.2rem;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .Genres {
+          display: none;
+          position: relative;
+          @include md {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: flex-end;
+          }
+        }
+      }
+      .textBlock {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        .title {
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+          line-height: 2.4rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include md {
+            font-size: 2rem;
+          }
+        }
+        .flexit {
+          display: flex;
+          justify-content: space-between;
+          .date {
+            font-size: 1.4rem;
+            opacity: 0.5;
+          }
+          .rating {
+            font-size: 1.2rem;
+            opacity: 0.5;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
